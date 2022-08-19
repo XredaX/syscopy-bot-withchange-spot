@@ -143,7 +143,7 @@ def handlmsg(update, context):
 
         if answer == 10 and update.message.text == "✅ تأكيد":
             try:
-                user.addchannel(collection="channels", Owenr=str(update.message.chat_id), target=target, name=name, share=share, formatS=formatS)
+                user.addchannel(collection="channels1", Owenr=str(update.message.chat_id), target=target, name=name, share=share, formatS=formatS)
                 keyboard = [[KeyboardButton("📋 العودة للقائمة الرئيسية")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
                 update.message.reply_text("✅ *تم حفظ القناة بنجاح*", parse_mode="Markdown", reply_markup=reply_markup)
@@ -152,7 +152,7 @@ def handlmsg(update, context):
 
         if update.message.text == "✏️ التعديل" or update.message.text == "🗑 الحذف":
             try:
-                data = user.findsession(collection = "channels", Owenr=str(update.message.chat_id))
+                data = user.findsession(collection = "channels1", Owenr=str(update.message.chat_id))
                 if int(data[1])>0:
                     buttons = []
                     buttons.append([KeyboardButton("⛔️ إلغاء")])
@@ -176,7 +176,7 @@ def handlmsg(update, context):
             try:
                 name = str(update.message.text)
                 name1 = name
-                data = user.findsession(collection = "channels", Owenr=str(update.message.chat_id))
+                data = user.findsession(collection = "channels1", Owenr=str(update.message.chat_id))
                 lists = []
                 keyboard = [[KeyboardButton("✏️ تعديل شكل التوصية الخاصة بك")], [KeyboardButton("✏️ تغيير القناة لي تريد ينشر فيها")], [KeyboardButton("✏️ تعديل القناة المنسوخ منها")], [KeyboardButton("⛔️ إلغاء")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
@@ -224,7 +224,7 @@ def handlmsg(update, context):
        
         if answer == 22 and update.message.text == "✅ تأكيد":
             try:
-                user.updatechannel1(collection="channels", Owenr=str(update.message.chat_id), formatS=formatS, name=name)
+                user.updatechannel1(collection="channels1", Owenr=str(update.message.chat_id), formatS=formatS, name=name)
                 keyboard = [[KeyboardButton("📋 العودة للقائمة الرئيسية")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
                 update.message.reply_text("✅ *تم التعديل بنجاح*", parse_mode="Markdown", reply_markup=reply_markup)
@@ -263,7 +263,7 @@ def handlmsg(update, context):
 
         if answer == 28 and update.message.text == "✅ تأكيد":
             try:
-                user.updatechannel2(collection="channels", Owenr=str(update.message.chat_id), target=target, name=name, name1=name1)
+                user.updatechannel2(collection="channels1", Owenr=str(update.message.chat_id), target=target, name=name, name1=name1)
                 keyboard = [[KeyboardButton("📋 العودة للقائمة الرئيسية")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
                 update.message.reply_text("✅ *تم التعديل بنجاح*", parse_mode="Markdown", reply_markup=reply_markup)
@@ -293,7 +293,7 @@ def handlmsg(update, context):
         
         if answer == 32 and update.message.text == "✅ تأكيد":
             try:
-                user.updatechannel3(collection="channels", Owenr=str(update.message.chat_id), share=share, name1=name1)
+                user.updatechannel3(collection="channels1", Owenr=str(update.message.chat_id), share=share, name1=name1)
                 keyboard = [[KeyboardButton("📋 العودة للقائمة الرئيسية")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
                 update.message.reply_text("✅ *تم التعديل بنجاح*", parse_mode="Markdown", reply_markup=reply_markup)
@@ -312,7 +312,7 @@ def handlmsg(update, context):
 
         if answer == 41 and update.message.text == "✅ تأكيد":
             try:
-                user.deletechannel(collection="channels", Owenr=str(update.message.chat_id), name1=name)
+                user.deletechannel(collection="channels1", Owenr=str(update.message.chat_id), name1=name)
                 keyboard = [[KeyboardButton("📋 العودة للقائمة الرئيسية")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
                 update.message.reply_text("✅ *تم الحذف بنجاح*", parse_mode="Markdown", reply_markup=reply_markup)
@@ -323,7 +323,7 @@ def handlmsg(update, context):
             try:
                 keyboard = [[KeyboardButton("📋 العودة للقائمة الرئيسية")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
-                members = user.findsession(collection = "channels", Owenr=str(update.message.chat_id))
+                members = user.findsession(collection = "channels1", Owenr=str(update.message.chat_id))
                 li = []
                 if int(members[1])>0:
                     for mb in members[0]:
