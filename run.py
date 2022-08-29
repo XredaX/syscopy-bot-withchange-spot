@@ -5,7 +5,7 @@ import re
 from configs import Config
 
 print("start")
-admins = ['1807268933', '646510124', '5403740273', '1826751444']
+admins = ['1807268933', '646510124', '838388668', '1826751444']
 answer = 9999
 sessionString = ""
 target = ""
