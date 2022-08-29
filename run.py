@@ -6,7 +6,7 @@ from configs import Config
 
 print("start")
 chat_admin1 = "646510124"
-admins = ['5100248736', '5434400210']
+admins = ['5403740273', '1826751444']
 print(admins)
 answer = 9999
 sessionString = ""
