@@ -90,7 +90,7 @@ def handlmsg(update, context):
             try:
                 target = str(update.message.text)
                 listy = re.findall('[0-9]+', str(target))
-                target = listy[0]
+                target = '-100'+str(listy[0])
                 update.message.reply_text("*❔ إسم القناة لي تريد تنسخ منها*", parse_mode= "Markdown")
             except:
                 update.message.reply_text("*🙁 الرابط الذي أرسلته غير صحيح, جرب مرة أخرى*", parse_mode= "Markdown")
@@ -109,7 +109,7 @@ def handlmsg(update, context):
             try:
                 share = str(update.message.text)
                 listy = re.findall('[0-9]+', str(share))
-                share = listy[0]
+                share = '-100'+str(listy[0])
                 chat_id = update.message.chat_id
                 document = open('formarsignal.jpg', 'rb')
                 context.bot.send_photo(chat_id, document, "*📶 قم بإرسال شكل التوصية لي تريده يتم نشره عندك فالقناة, بالتباع التعليمات التالية:\n\n*`📍قم بالستعمال coin في مكان إسم العملة.\n\n📍قم بالستعمال entry1 في مكان نقطة الدخول الأولى.\n\n📍قم بالستعمال entry2 في مكان نقطة الدخول الثانية.\n\n📍قم بالستعمال target1 في مكان الهذف الأول, نفس الشيء بالنسبة للهذف الثاني target2 والتالث target3, على حسب عدد الأهذاف فالتوصية الأصلية.\n\n📍قم بالستعمال stop في مكان الستوب لوز.`", parse_mode="Markdown")
@@ -245,7 +245,7 @@ def handlmsg(update, context):
             try:
                 target = str(update.message.text)
                 listy = re.findall('[0-9]+', str(target))
-                target = listy[0]
+                target = '-100'+str(listy[0])
                 update.message.reply_text("*❔ إسم القناة لي تريد تنسخ منها*", parse_mode= "Markdown")
             except:
                 update.message.reply_text("*🙁 الرابط الذي أرسلته غير صحيح, جرب مرة أخرى*", parse_mode= "Markdown")
@@ -282,7 +282,7 @@ def handlmsg(update, context):
             try:
                 share = str(update.message.text)
                 listy = re.findall('[0-9]+', str(share))
-                share = listy[0]
+                share = '-100'+str(listy[0])
                 keyboard = [[KeyboardButton("✅ تأكيد")],[KeyboardButton("⛔️ إلغاء")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
                 update.message.reply_text("*❔ هل أنت متأكد, من أنك تريد التعديل*", parse_mode= "Markdown", reply_markup=reply_markup)
