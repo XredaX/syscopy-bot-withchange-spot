@@ -6,7 +6,6 @@ from configs import Config
 
 print("start")
 admins = ['646510124', '5403740273', '1826751444']
-print(admins)
 answer = 9999
 sessionString = ""
 target = ""
