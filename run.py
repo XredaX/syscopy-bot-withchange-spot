@@ -5,8 +5,7 @@ import re
 from configs import Config
 
 print("start")
-chat_admin1 = "646510124"
-admins = ['5403740273', '1826751444']
+admins = ['646510124', '5403740273', '1826751444']
 print(admins)
 answer = 9999
 sessionString = ""
@@ -20,7 +19,7 @@ token = Config.BOT_TOKEN
 
 def start(update, context):
     try:
-        if str(update.message.chat_id) == chat_admin1 or str(update.message.chat_id) in admins:
+        if str(update.message.chat_id) in admins:
             keyboard = [[KeyboardButton("🔗 ربط الحساب"), KeyboardButton("🔗 ربط القناة")], [KeyboardButton("✏️ التعديل"), KeyboardButton("🗑 الحذف")], [KeyboardButton("🔰 قائمة القنوات")]]
             reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
             update.message.reply_text('*👋 مرحبا بك عزيزي الأدمن  *`'+update.effective_user.full_name+'`*\n\nيمكنك الإختيار من القائمة الموجودة في الأسفل 👇*', parse_mode="Markdown", reply_markup=reply_markup)
@@ -28,7 +27,7 @@ def start(update, context):
         pass
 
 def handlmsg(update, context):
-    if str(update.message.chat_id) == chat_admin1 or str(update.message.chat_id) in admins:
+    if str(update.message.chat_id) in admins:
         global sessionString, answer, target, name, share, formatS, name1
 
         if update.message.text == "⛔️ إلغاء" or update.message.text == "📋 العودة للقائمة الرئيسية":
