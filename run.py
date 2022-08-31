@@ -323,12 +323,12 @@ def handlmsg(update, context):
                 keyboard = [[KeyboardButton("📋 العودة للقائمة الرئيسية")]]
                 reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
                 members = user.findsession(collection = "channels1", Owenr=str(update.message.chat_id))
-                li = []
+                li = ""
                 if int(members[1])>0:
                     for mb in members[0]:
-                        name = mb["name"]
-                        li.append(name)
-                    update.message.reply_text("*📍 لائحة بأسماء القنوات لي يتم النسخ منها: \n\n*`"+str(*li)+"`", parse_mode="Markdown", reply_markup=reply_markup)
+                        name = mb["name"]+"\n"
+                        li += name
+                    update.message.reply_text("*📍 لائحة بأسماء القنوات لي يتم النسخ منها: \n\n*`"+str(li)+"`", parse_mode="Markdown", reply_markup=reply_markup)
                 else:
                     update.message.reply_text("*⚠️ لم تقم بإضافة أي قناة بعد*", parse_mode="Markdown", reply_markup=reply_markup)
                     answer = 9999
